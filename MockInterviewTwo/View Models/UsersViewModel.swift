@@ -6,27 +6,41 @@
 //
 
 import Foundation
+import UIKit
 
 class UsersViewModel: ObservableObject {
-    @Published var userCount: Int = 1
-    @Published var displayGender = false
-    @Published var displayLocation = false
-    @Published var displayEmail = false
-    @Published var displayLogin = false
-    @Published var displayRegistered = false
-    @Published var displayDOB = false
-    @Published var displayPhone = false
-    @Published var displayCell = false
-    @Published var displayID = false
-    @Published var displayNationality = false
+    @Published var users = [User]()
+    @Published var settings: Settings
+    
+    init(_ settings: Settings = Settings()) {
+        if let savedSetting = Settings.loadSettings() {
+            self.settings = savedSetting
+        } else {
+            self.settings = settings
+        }
+    }
     
     func incrementStep() {
-        userCount += 1
+        settings.userCount += 1
     }
     
     func decrementStep() {
-        guard userCount > 0 else { return }
+        guard settings.userCount > 1 else { return }
 
-        userCount -= 1
+        settings.userCount -= 1
+    }
+    
+    @MainActor
+    func getUsers() {
+        Task {
+            do {
+                let success = try await NetworkController().getUsers(settings.userCount)
+                if success {
+                    users = User.users
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
 }

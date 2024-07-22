@@ -14,6 +14,10 @@
 		A934EC7D2C4AA51A00DA314C /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC7C2C4AA51A00DA314C /* UsersView.swift */; };
 		A934EC802C4AA85D00DA314C /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC7F2C4AA85D00DA314C /* UsersViewModel.swift */; };
 		A934EC832C4AACB700DA314C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC822C4AACB700DA314C /* User.swift */; };
+		A934EC862C4AB35100DA314C /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC852C4AB35100DA314C /* NetworkController.swift */; };
+		A934EC892C4ADA6500DA314C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934EC882C4ADA6500DA314C /* Settings.swift */; };
+		A934ECA72C4E15F600DA314C /* UserImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934ECA62C4E15F600DA314C /* UserImageViewModel.swift */; };
+		A934ECA92C4E178300DA314C /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934ECA82C4E178300DA314C /* UserImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		A934EC7C2C4AA51A00DA314C /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		A934EC7F2C4AA85D00DA314C /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		A934EC822C4AACB700DA314C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A934EC852C4AB35100DA314C /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		A934EC882C4ADA6500DA314C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A934ECA62C4E15F600DA314C /* UserImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageViewModel.swift; sourceTree = "<group>"; };
+		A934ECA82C4E178300DA314C /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				A934EC6E2C4AA41D00DA314C /* MockInterviewTwoApp.swift */,
+				A934EC872C4AB35700DA314C /* Network */,
 				A934EC842C4AACBD00DA314C /* Models */,
 				A934EC7E2C4AA51E00DA314C /* Views */,
 				A934EC812C4AA86400DA314C /* View Models */,
@@ -79,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				A934EC702C4AA41D00DA314C /* SettingsView.swift */,
+				A934ECA82C4E178300DA314C /* UserImageView.swift */,
 				A934EC7C2C4AA51A00DA314C /* UsersView.swift */,
 			);
 			path = Views;
@@ -87,6 +97,7 @@
 		A934EC812C4AA86400DA314C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A934ECA62C4E15F600DA314C /* UserImageViewModel.swift */,
 				A934EC7F2C4AA85D00DA314C /* UsersViewModel.swift */,
 			);
 			path = "View Models";
@@ -95,9 +106,18 @@
 		A934EC842C4AACBD00DA314C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A934EC882C4ADA6500DA314C /* Settings.swift */,
 				A934EC822C4AACB700DA314C /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A934EC872C4AB35700DA314C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A934EC852C4AB35100DA314C /* NetworkController.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A934ECA92C4E178300DA314C /* UserImageView.swift in Sources */,
 				A934EC712C4AA41D00DA314C /* SettingsView.swift in Sources */,
+				A934ECA72C4E15F600DA314C /* UserImageViewModel.swift in Sources */,
 				A934EC802C4AA85D00DA314C /* UsersViewModel.swift in Sources */,
+				A934EC862C4AB35100DA314C /* NetworkController.swift in Sources */,
 				A934EC6F2C4AA41D00DA314C /* MockInterviewTwoApp.swift in Sources */,
+				A934EC892C4ADA6500DA314C /* Settings.swift in Sources */,
 				A934EC832C4AACB700DA314C /* User.swift in Sources */,
 				A934EC7D2C4AA51A00DA314C /* UsersView.swift in Sources */,
 			);

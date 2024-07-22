@@ -15,7 +15,7 @@ struct SettingsView: View {
             HStack {
                 Text("User Count")
                 Spacer()
-                Text(String(usersViewModel.userCount))
+                Text(String(usersViewModel.settings.userCount))
                 Stepper { } onIncrement: {
                     usersViewModel.incrementStep()
                 } onDecrement: {
@@ -25,31 +25,32 @@ struct SettingsView: View {
             }
             
             Group {
-                Toggle("Gender", isOn: $usersViewModel.displayGender)
+                Toggle("Gender", isOn: $usersViewModel.settings.showGender)
                 
-                Toggle("Location", isOn: $usersViewModel.displayLocation)
+                Toggle("Location", isOn: $usersViewModel.settings.showLocation)
                 
-                Toggle("Email", isOn: $usersViewModel.displayEmail)
+                Toggle("Email", isOn: $usersViewModel.settings.showEmail)
                 
-                Toggle("Login", isOn: $usersViewModel.displayLogin)
+                Toggle("Login", isOn: $usersViewModel.settings.showLogin)
                 
-                Toggle("Registered", isOn: $usersViewModel.displayRegistered)
+                Toggle("Registered", isOn: $usersViewModel.settings.showRegistered)
                 
-                Toggle("Date of birth", isOn: $usersViewModel.displayDOB)
+                Toggle("Date of birth", isOn: $usersViewModel.settings.showDOB)
                 
-                Toggle("Phone", isOn: $usersViewModel.displayPhone)
+                Toggle("Phone", isOn: $usersViewModel.settings.showPhone)
                 
-                Toggle("Cell", isOn: $usersViewModel.displayCell)
+                Toggle("Cell", isOn: $usersViewModel.settings.showCell)
                 
-                Toggle("ID", isOn: $usersViewModel.displayID)
+                Toggle("ID", isOn: $usersViewModel.settings.showID)
                 
-                Toggle("Nationality", isOn: $usersViewModel.displayNationality)
+                Toggle("Nationality", isOn: $usersViewModel.settings.showNationality)
             }
-            
+        }
+        .onChange(of: usersViewModel.settings) {
+            Settings.saveSetting(usersViewModel.settings)
         }
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
-        
     }
 }
 
